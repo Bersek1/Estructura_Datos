@@ -10,6 +10,7 @@ for x in range(filas):
     for y in range(columnas):
         matriz[x][y] *= multiplicar
 
+
 print("la matriz multiplicada:")
 for fila in matriz:
     print(fila)
