@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 void main() {
   List<int> lista = [];
@@ -22,4 +23,10 @@ void main() {
   lista.sort((a, b) => b.compareTo(a));
 
   print('lista ordenada descendentemente: $lista');
+
+  int maximo = lista.reduce(max);
+  int minimo = lista.reduce(min);
+
+  print('valor maximo de la lista es: $maximo');
+  print('Valor minimo de la lista es: $minimo');
 }
