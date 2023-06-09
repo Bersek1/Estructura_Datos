@@ -1,0 +1,44 @@
+void main() {
+  // Crear un diccionario para almacenar la información de los estudiantes
+  var estudiantes = <String, Map<String, dynamic>>{};
+
+  // Ingresar la información de los estudiantes
+  for (var i = 1; i <= 3; i++) {
+    print('Ingrese la información del estudiante $i:');
+    var estudiante = <String, dynamic>{};
+
+    // Ingresar el nombre del estudiante
+    stdout.write('Nombre del estudiante: ');
+    estudiante['nombre'] = stdin.readLineSync();
+
+    // Ingresar el nombre de la asignatura
+    stdout.write('Nombre de la asignatura: ');
+    estudiante['asignatura'] = stdin.readLineSync();
+
+    // Ingresar la nota del Laboratorio N°1
+    stdout.write('Nota del Laboratorio N°1: ');
+    estudiante['nota1'] = double.parse(stdin.readLineSync()!);
+
+    // Ingresar la nota del Laboratorio N°2
+    stdout.write('Nota del Laboratorio N°2: ');
+    estudiante['nota2'] = double.parse(stdin.readLineSync()!);
+
+    estudiantes['estudiante$i'] = estudiante;
+  }
+
+  // Calcular el promedio final ponderado para cada estudiante
+  estudiantes.forEach((key, value) {
+    var promedioFinal = (value['nota1'] * 0.3) + (value['nota2'] * 0.7);
+    value['promedioFinal'] = promedioFinal.toStringAsFixed(1);
+  });
+
+  // Mostrar la información de los estudiantes y el promedio final ponderado
+  estudiantes.forEach((key, value) {
+    print('\nInformación del estudiante $key:');
+    print('Nombre: ${value['nombre']}');
+    print('Asignatura: ${value['asignatura']}');
+    print('Nota del Laboratorio N°1: ${value['nota1']}');
+    print('Nota del Laboratorio N°2: ${value['nota2']}');
+    print('Promedio final ponderado: ${value['promedioFinal']}');
+  });
+}
