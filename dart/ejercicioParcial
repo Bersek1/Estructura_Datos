@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void main() {
   // Crear un diccionario para almacenar la información de los estudiantes
   var estudiantes = <String, Map<String, dynamic>>{};
