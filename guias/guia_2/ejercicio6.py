@@ -40,7 +40,7 @@ class Empleados:
         return None
 
 
-# Ejemplo de uso
+
 jerarquia = Empleados()
 
 jerarquia.agregar_empleado("Director General", "CEO")
